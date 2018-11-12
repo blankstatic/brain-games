@@ -1,6 +1,6 @@
 {
   "name": "aliendrop-brain-games",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "hexlet project lvl1",
   "main": "dist/index.js",
   "bin": {
