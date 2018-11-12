@@ -2,7 +2,6 @@
   "name": "aliendrop-brain-games",
   "version": "1.0.1",
   "description": "hexlet project lvl1",
-  "main": "dist/index.js",
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -24,6 +23,10 @@
     "url": "https://github.com/Aliendrop/project-lvl1-s376/issues"
   },
   "homepage": "https://github.com/Aliendrop/project-lvl1-s376#readme",
+  "keywords": [
+    "console",
+    "game"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.5",
