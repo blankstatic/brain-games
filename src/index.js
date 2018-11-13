@@ -1,5 +1,6 @@
 import readlineSync from 'readline-sync';
-import evenGame from './lib/even';
+
+const gameStepsLimit = 3;
 
 const greeting = (gameRules = '') => {
   console.log(`Welcome to the Brain Games!\n${gameRules}`);
@@ -8,17 +9,26 @@ const greeting = (gameRules = '') => {
   return userName;
 };
 
-const runGame = (game) => {
-  switch (game) {
-    case 'even': {
-      const userName = greeting('Answer "yes" if number even otherwise answer "no".\n');
-      evenGame(userName);
-      break;
+const playGame = (question, correctAnswer, userName) => {
+  for (let step = 1; step <= gameStepsLimit; step += 1) {
+    const gameStepQuestion = question();
+    const gameStepCorrectAnswer = correctAnswer(gameStepQuestion);
+
+    console.log(`Question: ${gameStepQuestion}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+
+    if (userAnswer !== gameStepCorrectAnswer) {
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameStepCorrectAnswer}'.\nLet's try again, ${userName}!`);
+    } else {
+      console.log('Correct!');
     }
-    default:
-      greeting();
-      break;
   }
+  console.log(`Congratulations, ${userName}!`);
 };
 
-export default runGame;
+const runGame = (question, correctAnswer, gameRules) => {
+  const userName = greeting(gameRules);
+  playGame(question, correctAnswer, userName);
+};
+
+export { runGame, greeting };
