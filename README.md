@@ -21,4 +21,4 @@ brain-calc
 
 ## Example
 
-![example](./demo-game-calc.gif)
+![example](./demo-brain-calc.gif)
