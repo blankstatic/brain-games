@@ -9,26 +9,26 @@ const greeting = (gameRules = '') => {
   return userName;
 };
 
-const playGame = (question, correctAnswer, userName) => {
+const playGame = (game, userName) => {
   for (let step = 1; step <= gameStepsLimit; step += 1) {
-    const gameStepQuestion = question();
-    const gameStepCorrectAnswer = correctAnswer(gameStepQuestion);
+    const gameData = game();
+    const gameStepQuestion = gameData[0];
+    const gameStepCorrectAnswer = gameData[1];
 
     console.log(`Question: ${gameStepQuestion}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== gameStepCorrectAnswer) {
       return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameStepCorrectAnswer}'.\nLet's try again, ${userName}!`);
-    } else {
-      console.log('Correct!');
     }
+    console.log('Correct!');
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
-const runGame = (question, correctAnswer, gameRules) => {
+const runGame = (game, gameRules) => {
   const userName = greeting(gameRules);
-  playGame(question, correctAnswer, userName);
+  playGame(game, userName);
 };
 
-export { runGame, greeting };
+export { runGame as default, greeting };
