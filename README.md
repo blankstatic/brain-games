@@ -1,4 +1,6 @@
-# Brain Games Project
+# Brain Games Set
+- brain-even
+- brain-calc
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/d426db603c57aa7836a2/maintainability)](https://codeclimate.com/github/Aliendrop/project-lvl1-s376/maintainability)
 [![Build Status](https://travis-ci.com/Aliendrop/project-lvl1-s376.svg?branch=master)](https://travis-ci.com/Aliendrop/project-lvl1-s376)
@@ -14,9 +16,9 @@ npm install -g aliendrop-brain-games
 Execute from CLI
 
 ```
-brain-even
+brain-calc
 ```
 
 ## Example
 
-![example](./demo.gif)
+![example](./demo-game-calc.gif)
