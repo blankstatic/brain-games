@@ -8,7 +8,7 @@ start-even:
 	npx babel-node -- src/bin/brain-even.js
 
 lint:
-	npm run eslint .
+	npx eslint .
 
 publish:
 	npm publish
