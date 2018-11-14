@@ -20,9 +20,9 @@ npm install -g aliendrop-brain-games
 Execute from CLI
 
 ```
-brain-calc
+brain-gcd
 ```
 
 ## Example
 
-![example](./screenshots/brain-calc.gif)
+![example](./screenshots/brain-gcd.gif)
