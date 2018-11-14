@@ -9,7 +9,7 @@ const playGame = (game) => {
   const gameCycle = (step = 0) => {
     if (step === gameStepsLimit) {
       console.log(`Congratulations, ${userName}!`);
-      return true;
+      return false;
     }
     const [gameStepQuestion, gameStepCorrectAnswer] = game();
 
@@ -24,7 +24,7 @@ const playGame = (game) => {
     return gameCycle(step + 1);
   };
 
-  gameCycle();
+  if (gameCycle()) gameCycle();
 };
 
 const runGame = (game = null, gameRules) => {
