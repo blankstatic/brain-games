@@ -2,7 +2,8 @@ import readlineSync from 'readline-sync';
 
 const gameStepsLimit = 3;
 
-const playGame = (game) => {
+const playGame = (game, gameRules) => {
+  console.log(`Welcome to the Brain Games!\n${gameRules}\n`);
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
@@ -28,9 +29,4 @@ const playGame = (game) => {
   nextGameRound();
 };
 
-const runGame = (game = null, gameRules) => {
-  console.log(`Welcome to the Brain Games!\n${gameRules}\n`);
-  if (game) playGame(game);
-};
-
-export default runGame;
+export default playGame;
