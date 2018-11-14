@@ -7,6 +7,7 @@
 - brain-even
 - brain-calc
 - brain-gcd
+- brain-progression
 
 ## Install
 
