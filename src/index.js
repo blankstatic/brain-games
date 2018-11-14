@@ -2,33 +2,32 @@ import readlineSync from 'readline-sync';
 
 const gameStepsLimit = 3;
 
-const greeting = (gameRules = '') => {
-  console.log(`Welcome to the Brain Games!\n${gameRules}`);
+const playGame = (game) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
-  return userName;
-};
 
-const playGame = (game, userName) => {
-  for (let step = 1; step <= gameStepsLimit; step += 1) {
-    const gameData = game();
-    const gameStepQuestion = gameData[0];
-    const gameStepCorrectAnswer = gameData[1];
+  const gameCycle = (step = 0) => {
+    if (step === gameStepsLimit) return `Congratulations, ${userName}!`;
+
+    const [gameStepQuestion, gameStepCorrectAnswer] = game();
 
     console.log(`Question: ${gameStepQuestion}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
     if (userAnswer !== gameStepCorrectAnswer) {
-      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameStepCorrectAnswer}'.\nLet's try again, ${userName}!`);
+      return `'${userAnswer}' is wrong answer ;(. Correct answer was '${gameStepCorrectAnswer}'.\nLet's try again, ${userName}!`;
     }
     console.log('Correct!');
-  }
-  return console.log(`Congratulations, ${userName}!`);
+    return gameCycle(step + 1);
+  };
+
+  const gameOverMessage = gameCycle();
+  console.log(gameOverMessage);
 };
 
-const runGame = (game, gameRules) => {
-  const userName = greeting(gameRules);
-  playGame(game, userName);
+const runGame = (game = null, gameRules) => {
+  console.log(`Welcome to the Brain Games!\n${gameRules}\n`);
+  if (game) playGame(game);
 };
 
-export { runGame as default, greeting };
+export default runGame;

@@ -1,7 +1,7 @@
 import getRandomInteger from '../utils';
 import runGame from '..';
 
-const gameRules = 'What is the result of the expression?\n';
+const gameRules = 'What is the result of the expression?';
 
 const gameMaxValue = 10;
 const gameMinValue = 1;
@@ -10,9 +10,10 @@ const addition = (a, b) => a + b;
 const subtraction = (a, b) => a - b;
 const multiplication = (a, b) => a * b;
 
+const operations = [addition, subtraction, multiplication];
+const symbols = ['+', '-', '*'];
+
 const randomCalculateGameData = (a, b) => {
-  const operations = [addition, subtraction, multiplication];
-  const symbols = ['+', '-', '*'];
   const randomChooseOperation = getRandomInteger(operations.length);
 
   const operationResult = operations[randomChooseOperation](a, b);

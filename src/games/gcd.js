@@ -1,7 +1,7 @@
 import getRandomInteger from '../utils';
 import runGame from '..';
 
-const gameRules = 'Find the greatest common divisor of given numbers.\n';
+const gameRules = 'Find the greatest common divisor of given numbers.';
 
 const gameMaxValue = 100;
 const gameMinValue = 10;
