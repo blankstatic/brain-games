@@ -24,7 +24,9 @@ const generateGameData = (a, b) => {
 const calcGame = () => {
   const leftValue = getRandomInteger(gameMaxValue, gameMinValue);
   const rigthValue = getRandomInteger(gameMaxValue, gameMinValue);
-  return generateGameData(leftValue, rigthValue);
+
+  const gameData = generateGameData(leftValue, rigthValue);
+  return gameData;
 };
 
 export default () => runGame(calcGame, gameRules);
