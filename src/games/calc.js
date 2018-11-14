@@ -13,18 +13,18 @@ const multiplication = (a, b) => a * b;
 const operations = [addition, subtraction, multiplication];
 const symbols = ['+', '-', '*'];
 
-const randomCalculateGameData = (a, b) => {
+const generateGameData = (a, b) => {
   const randomChooseOperation = getRandomInteger(operations.length);
 
-  const operationResult = operations[randomChooseOperation](a, b);
-  const fullStringOperation = `${a} ${symbols[randomChooseOperation]} ${b}`;
-  return [fullStringOperation, String(operationResult)];
+  const correctAnswer = operations[randomChooseOperation](a, b);
+  const question = `${a} ${symbols[randomChooseOperation]} ${b}`;
+  return [question, String(correctAnswer)];
 };
 
 const calcGame = () => {
   const leftValue = getRandomInteger(gameMaxValue, gameMinValue);
   const rigthValue = getRandomInteger(gameMaxValue, gameMinValue);
-  return randomCalculateGameData(leftValue, rigthValue);
+  return generateGameData(leftValue, rigthValue);
 };
 
 export default () => runGame(calcGame, gameRules);

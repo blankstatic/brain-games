@@ -14,7 +14,10 @@ const findGcd = (a, b) => {
 const gcdGame = () => {
   const leftValue = getRandomInteger(gameMaxValue, gameMinValue);
   const rigthValue = getRandomInteger(gameMaxValue, gameMinValue);
-  return [`${leftValue} ${rigthValue}`, String(findGcd(leftValue, rigthValue))];
+
+  const question = `${leftValue} ${rigthValue}`;
+  const correctAnswer = String(findGcd(leftValue, rigthValue));
+  return [question, correctAnswer];
 };
 
 export default () => runGame(gcdGame, gameRules);

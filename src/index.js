@@ -6,25 +6,26 @@ const playGame = (game) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!\n`);
 
-  const gameCycle = (step = 0) => {
+  const nextGameRound = (step = 0) => {
     if (step === gameStepsLimit) {
       console.log(`Congratulations, ${userName}!`);
       return;
     }
-    const [gameStepQuestion, gameStepCorrectAnswer] = game();
+    const [question, correctAnswer] = game();
 
-    console.log(`Question: ${gameStepQuestion}`);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
-    if (userAnswer !== gameStepCorrectAnswer) {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${gameStepCorrectAnswer}'.\nLet's try again, ${userName}!`);
+    if (userAnswer !== correctAnswer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+      console.log(`Let's try again, ${userName}!`);
       return;
     }
     console.log('Correct!');
-    gameCycle(step + 1);
+    nextGameRound(step + 1);
   };
 
-  gameCycle();
+  nextGameRound();
 };
 
 const runGame = (game = null, gameRules) => {
