@@ -4,12 +4,13 @@ import runGame from '..';
 const gameRules = 'What number is missing in the progression?';
 
 const countProgressionElements = 10;
-const limitStartProgression = 100;
+const startProgressionMax = 100;
+const startProgressionMin = 90;
 const limitStepProgression = 10;
 const hiddenElementSymbols = '..';
 
 const generateGameData = () => {
-  const startProgression = getRandomInteger(limitStartProgression, 1);
+  const startProgression = getRandomInteger(startProgressionMax, startProgressionMin);
   const progressionStep = getRandomInteger(limitStepProgression, 1);
   const hiddenElementIndex = getRandomInteger(countProgressionElements, 1);
 
