@@ -17,9 +17,10 @@ const hideItemInProgression = (progression, index, hiddenSymbols) => {
 const progressionToString = progression => progression.join(' ');
 
 const fillProgression = (progression, item, step, itemsLimit, currentIndex = 0) => {
-  if (currentIndex === itemsLimit) return;
-  progression.push(item);
-  fillProgression(progression, item + step, step, itemsLimit, currentIndex + 1);
+  if (currentIndex !== itemsLimit) {
+    progression.push(item);
+    fillProgression(progression, item + step, step, itemsLimit, currentIndex + 1);
+  }
 };
 
 const generateGameData = () => {
