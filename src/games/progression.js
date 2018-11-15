@@ -3,11 +3,11 @@ import runGame from '..';
 
 const gameRules = 'What number is missing in the progression?';
 
-const countProgressionItems = 10;
+const progressionItemsCount = 10;
 const startProgressionMax = 100;
 const startProgressionMin = 1;
-const limitStepProgression = 5;
-const hiddenItemSymbols = '..';
+const stepProgressionLimit = 5;
+const hiddenItemSymbol = '..';
 
 const createProgression = (progressionLength, startItem, stepValue) => {
   const addItems = (progression, item, step, index = 0) => {
@@ -28,11 +28,11 @@ const progressionWithHiddenItem = (progression, index, symbols) => {
 
 const generateGameData = () => {
   const startProgression = getRandomInteger(startProgressionMax, startProgressionMin);
-  const progressionStep = getRandomInteger(limitStepProgression, 1);
-  const hiddenItemIndex = getRandomInteger(countProgressionItems - 1);
+  const progressionStep = getRandomInteger(stepProgressionLimit, 1);
+  const hiddenItemIndex = getRandomInteger(progressionItemsCount - 1);
 
-  const progression = createProgression(countProgressionItems, startProgression, progressionStep);
-  const desiredFlow = progressionWithHiddenItem(progression, hiddenItemIndex, hiddenItemSymbols);
+  const progression = createProgression(progressionItemsCount, startProgression, progressionStep);
+  const desiredFlow = progressionWithHiddenItem(progression, hiddenItemIndex, hiddenItemSymbol);
 
   const question = desiredFlow.join(' ');
   const correctAnswer = String(progression[hiddenItemIndex]);
