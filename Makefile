@@ -23,4 +23,5 @@ lint:
 	npx eslint .
 
 publish:
+	rm -rf dist
 	npm publish
