@@ -3,34 +3,34 @@ import runGame from '..';
 
 const gameRules = 'What number is missing in the progression?';
 
-const countProgressionElements = 10;
+const countProgressionItems = 10;
 const startProgressionMax = 10;
 const startProgressionMin = 1;
 const limitStepProgression = 10;
-const hiddenElementSymbols = '..';
+const hiddenItemSymbols = '..';
 
-const hideElementInProgression = (progression, index) => {
-  const hiddenElement = progression.splice(index, 1, hiddenElementSymbols);
-  return String(hiddenElement);
+const hideItemInProgression = (progression, index, hiddenSymbols) => {
+  const hiddenItem = progression.splice(index, 1, hiddenSymbols);
+  return String(hiddenItem);
 };
 
 const progressionToString = progression => progression.join(' ');
 
-const fillProgression = (progression, element, step, elementsLimit, currentIndex = 0) => {
-  if (currentIndex === elementsLimit) return;
-  progression.push(element);
-  fillProgression(progression, element + step, step, elementsLimit, currentIndex + 1);
+const fillProgression = (progression, item, step, itemsLimit, currentIndex = 0) => {
+  if (currentIndex === itemsLimit) return;
+  progression.push(item);
+  fillProgression(progression, item + step, step, itemsLimit, currentIndex + 1);
 };
 
 const generateGameData = () => {
   const startProgression = getRandomInteger(startProgressionMax, startProgressionMin);
   const progressionStep = getRandomInteger(limitStepProgression, 1);
-  const hiddenElementIndex = getRandomInteger(countProgressionElements - 1);
+  const hiddenItemIndex = getRandomInteger(countProgressionItems - 1);
   const progression = [];
 
-  fillProgression(progression, startProgression, progressionStep, countProgressionElements);
+  fillProgression(progression, startProgression, progressionStep, countProgressionItems);
 
-  const correctAnswer = hideElementInProgression(progression, hiddenElementIndex);
+  const correctAnswer = hideItemInProgression(progression, hiddenItemIndex, hiddenItemSymbols);
   const question = progressionToString(progression);
   return [question, correctAnswer];
 };
