@@ -4,32 +4,35 @@ import runGame from '..';
 const gameRules = 'What number is missing in the progression?';
 
 const countProgressionElements = 10;
-const startProgressionMax = 100;
-const startProgressionMin = 90;
+const startProgressionMax = 10;
+const startProgressionMin = 1;
 const limitStepProgression = 10;
 const hiddenElementSymbols = '..';
+
+const hideElementInProgression = (progression, index) => {
+  const hiddenElement = progression.splice(index, 1, hiddenElementSymbols);
+  return String(hiddenElement);
+};
+
+const progressionToString = progression => progression.join(' ');
+
+const fillProgression = (progression, element, step, elementsLimit, currentIndex = 0) => {
+  if (currentIndex === elementsLimit) return;
+  progression.push(element);
+  fillProgression(progression, element + step, step, elementsLimit, currentIndex + 1);
+};
 
 const generateGameData = () => {
   const startProgression = getRandomInteger(startProgressionMax, startProgressionMin);
   const progressionStep = getRandomInteger(limitStepProgression, 1);
-  const hiddenElementIndex = getRandomInteger(countProgressionElements, 1);
-
+  const hiddenElementIndex = getRandomInteger(countProgressionElements - 1);
   const progression = [];
 
-  let progressionElement = startProgression;
-  let correctAnswer = '';
+  fillProgression(progression, startProgression, progressionStep, countProgressionElements);
 
-  for (let element = 1; element <= countProgressionElements; element += 1) {
-    if (element !== hiddenElementIndex) {
-      progression.push(progressionElement);
-    } else {
-      progression.push(hiddenElementSymbols);
-      correctAnswer = String(progressionElement);
-    }
-    progressionElement += progressionStep;
-  }
-  console.log(progression);
-  return [progression.join(' '), correctAnswer];
+  const correctAnswer = hideElementInProgression(progression, hiddenElementIndex);
+  const question = progressionToString(progression);
+  return [question, correctAnswer];
 };
 
 const progressionGame = () => {
