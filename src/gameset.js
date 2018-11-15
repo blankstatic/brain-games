@@ -6,11 +6,11 @@ import progression from './games/progression';
 import prime from './games/prime';
 
 const gameset = {
-  'brain-even': () => even(),
-  'brain-calc': () => calc(),
-  'brain-gcd': () => gcd(),
-  'brain-progression': () => progression(),
-  'brain-prime': () => prime(),
+  'brain-even': even,
+  'brain-calc': calc,
+  'brain-gcd': gcd,
+  'brain-progression': progression,
+  'brain-prime': prime,
 };
 
 const showGames = () => {
