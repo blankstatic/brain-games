@@ -14,21 +14,22 @@ const generateGameData = () => {
   const progressionStep = getRandomInteger(limitStepProgression, 1);
   const hiddenElementIndex = getRandomInteger(countProgressionElements, 1);
 
+  const progression = [];
+
   let progressionElement = startProgression;
-  let question = '';
   let correctAnswer = '';
 
   for (let element = 1; element <= countProgressionElements; element += 1) {
     if (element !== hiddenElementIndex) {
-      question = `${question} ${progressionElement}`;
+      progression.push(progressionElement);
     } else {
-      question = `${question} ${hiddenElementSymbols}`;
+      progression.push(hiddenElementSymbols);
       correctAnswer = String(progressionElement);
     }
     progressionElement += progressionStep;
   }
-
-  return [question, correctAnswer];
+  console.log(progression);
+  return [progression.join(' '), correctAnswer];
 };
 
 const progressionGame = () => {
