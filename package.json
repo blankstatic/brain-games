@@ -1,6 +1,6 @@
 {
   "name": "aliendrop-brain-games",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "text-based mini-game (hexlet project lvl1)",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
