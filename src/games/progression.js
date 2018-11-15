@@ -27,8 +27,8 @@ const generateGameData = () => {
   const startProgression = getRandomInteger(startProgressionMax, startProgressionMin);
   const progressionStep = getRandomInteger(limitStepProgression, 1);
   const hiddenItemIndex = getRandomInteger(countProgressionItems - 1);
-  const progression = [];
 
+  const progression = [];
   fillProgression(progression, startProgression, progressionStep, countProgressionItems);
 
   const correctAnswer = getAndHideItemProgression(progression, hiddenItemIndex, hiddenItemSymbols);

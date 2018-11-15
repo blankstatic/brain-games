@@ -12,11 +12,11 @@ const findGcd = (a, b) => {
 };
 
 const gcdGame = () => {
-  const leftValue = getRandomInteger(gameMaxValue, gameMinValue);
-  const rigthValue = getRandomInteger(gameMaxValue, gameMinValue);
+  const valueA = getRandomInteger(gameMaxValue, gameMinValue);
+  const valueB = getRandomInteger(gameMaxValue, gameMinValue);
 
-  const question = `${leftValue} ${rigthValue}`;
-  const correctAnswer = String(findGcd(leftValue, rigthValue));
+  const question = `${valueA} ${valueB}`;
+  const correctAnswer = String(findGcd(valueA, valueB));
   return [question, correctAnswer];
 };
 
