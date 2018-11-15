@@ -9,7 +9,7 @@ const startProgressionMin = 1;
 const limitStepProgression = 10;
 const hiddenItemSymbols = '..';
 
-const hideItemInProgression = (progression, index, hiddenSymbols) => {
+const getAndHideItemProgression = (progression, index, hiddenSymbols) => {
   const hiddenItem = progression.splice(index, 1, hiddenSymbols);
   return String(hiddenItem);
 };
@@ -31,7 +31,7 @@ const generateGameData = () => {
 
   fillProgression(progression, startProgression, progressionStep, countProgressionItems);
 
-  const correctAnswer = hideItemInProgression(progression, hiddenItemIndex, hiddenItemSymbols);
+  const correctAnswer = getAndHideItemProgression(progression, hiddenItemIndex, hiddenItemSymbols);
   const question = progressionToString(progression);
   return [question, correctAnswer];
 };
