@@ -6,6 +6,7 @@ const gameRules = 'What number is missing in the progression?';
 const countProgressionElements = 10;
 const limitStartProgression = 100;
 const limitStepProgression = 10;
+const hiddenElementSymbols = '..';
 
 const generateGameData = () => {
   const startProgression = getRandomInteger(limitStartProgression, 1);
@@ -20,7 +21,7 @@ const generateGameData = () => {
     if (element !== hiddenElementIndex) {
       question = `${question} ${progressionElement}`;
     } else {
-      question = `${question} ..`;
+      question = `${question} ${hiddenElementSymbols}`;
       correctAnswer = String(progressionElement);
     }
     progressionElement += progressionStep;
