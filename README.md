@@ -21,9 +21,9 @@ npm install -g aliendrop-brain-games
 Execute from CLI
 
 ```
-brain-prime
+brain-games
 ```
 
 ## Example
 
-![example](./screenshots/brain-prime.gif)
+![example](./screenshots/brain-games.gif)
