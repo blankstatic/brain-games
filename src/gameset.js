@@ -17,7 +17,7 @@ const showGames = () => {
   console.log('Available games set:');
   const titles = Object.keys(gameset);
   const games = Object.values(gameset);
-  const selectedGame = readlineSync.keyInSelect(titles, 'Сhoose one of them and enjoy :)');
+  const selectedGame = readlineSync.keyInSelect(titles, 'Сhoose one of them and enjoy :)', { cancel: 'EXIT' });
   if (selectedGame >= 0) {
     console.log(`\nSelected <${titles[selectedGame]}> running...\n`);
     games[selectedGame]();
