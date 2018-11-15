@@ -22,10 +22,10 @@ const generateGameData = (a, b) => {
 };
 
 const calcGame = () => {
-  const leftValue = getRandomInteger(gameMaxValue, gameMinValue);
-  const rigthValue = getRandomInteger(gameMaxValue, gameMinValue);
+  const valueA = getRandomInteger(gameMaxValue, gameMinValue);
+  const valueB = getRandomInteger(gameMaxValue, gameMinValue);
 
-  const gameData = generateGameData(leftValue, rigthValue);
+  const gameData = generateGameData(valueA, valueB);
   return gameData;
 };
 
