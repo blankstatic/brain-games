@@ -21,9 +21,9 @@ const createProgression = (progressionLength, startItem, stepValue) => {
   return progression;
 };
 
-const getAndHideItemProgression = (progression, index, hiddenSymbols) => {
-  const hiddenItem = progression.splice(index, 1, hiddenSymbols);
-  return String(hiddenItem);
+const progressionWithHiddenItem = (progression, index, symbols) => {
+  const flow = progression.map((item, idx) => (index !== idx ? item : symbols));
+  return flow;
 };
 
 const generateGameData = () => {
@@ -32,9 +32,10 @@ const generateGameData = () => {
   const hiddenItemIndex = getRandomInteger(countProgressionItems - 1);
 
   const progression = createProgression(countProgressionItems, startProgression, progressionStep);
+  const desiredFlow = progressionWithHiddenItem(progression, hiddenItemIndex, hiddenItemSymbols);
 
-  const correctAnswer = getAndHideItemProgression(progression, hiddenItemIndex, hiddenItemSymbols);
-  const question = progression.join(' ');
+  const question = desiredFlow.join(' ');
+  const correctAnswer = String(progression[hiddenItemIndex]);
   return [question, correctAnswer];
 };
 
