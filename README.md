@@ -8,6 +8,7 @@
 - brain-calc
 - brain-gcd
 - brain-progression
+- brain-prime
 
 ## Install
 
@@ -20,9 +21,9 @@ npm install -g aliendrop-brain-games
 Execute from CLI
 
 ```
-brain-progression
+brain-prime
 ```
 
 ## Example
 
-![example](./screenshots/brain-progression.gif)
+![example](./screenshots/brain-prime.gif)
