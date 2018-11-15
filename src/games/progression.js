@@ -14,8 +14,6 @@ const getAndHideItemProgression = (progression, index, hiddenSymbols) => {
   return String(hiddenItem);
 };
 
-const progressionToString = progression => progression.join(' ');
-
 const fillProgression = (progression, item, step, itemsLimit, currentIndex = 0) => {
   if (currentIndex !== itemsLimit) {
     progression.push(item);
@@ -32,7 +30,7 @@ const generateGameData = () => {
   fillProgression(progression, startProgression, progressionStep, countProgressionItems);
 
   const correctAnswer = getAndHideItemProgression(progression, hiddenItemIndex, hiddenItemSymbols);
-  const question = progressionToString(progression);
+  const question = progression.join(' ');
   return [question, correctAnswer];
 };
 
