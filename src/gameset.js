@@ -1,4 +1,4 @@
-const gameset = ['brain-even', 'brain-calc', 'brain-gcd', 'brain-progression'];
+const gameset = ['brain-even', 'brain-calc', 'brain-gcd', 'brain-progression', 'brain-prime'];
 const gamesetMessage = `Сhoose one of the games:\n${gameset.join(', ')} and enjoy :)`;
 
 const showGames = () => {
