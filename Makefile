@@ -19,6 +19,9 @@ start-progression:
 start-prime:
 	npx babel-node -- src/bin/brain-prime.js
 
+start-findx:
+	npx babel-node -- src/bin/brain-findx.js
+
 lint:
 	npx eslint .
 
