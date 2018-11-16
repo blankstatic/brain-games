@@ -10,14 +10,13 @@ const stepProgressionLimit = 5;
 const hiddenItemSymbol = '..';
 
 const createProgression = (progressionLength, startItem, stepValue) => {
-  const addItems = (progression, item, step, index = 0) => {
-    if (index !== progressionLength) {
-      progression.push(item);
-      addItems(progression, item + step, step, index + 1);
-    }
+  const addItem = (item, step, limit, current = 0) => {
+    if (current === limit) return item;
+    return addItem(item + step, step, limit, current + 1);
   };
-  const progression = [];
-  addItems(progression, startItem, stepValue);
+
+  const progressionTemplate = Array(progressionLength).fill(0);
+  const progression = progressionTemplate.map((i, index) => addItem(startItem, stepValue, index));
   return progression;
 };
 
