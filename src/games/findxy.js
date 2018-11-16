@@ -29,7 +29,7 @@ const generateGameData = (a, b) => {
   return [question, correctAnswer];
 };
 
-const calcGame = () => {
+const findxyGame = () => {
   const valueA = getRandomInteger(gameMaxValue, gameMinValue);
   const valueB = getRandomInteger(gameMaxValue, gameMinValue);
 
@@ -37,4 +37,4 @@ const calcGame = () => {
   return gameData;
 };
 
-export default () => runGame(calcGame, gameRules);
+export default () => runGame(findxyGame, gameRules);
