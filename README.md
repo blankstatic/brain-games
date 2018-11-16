@@ -27,4 +27,4 @@ brain-games
 
 ## Example
 
-![example](./screenshots/brain-games.gif)
+![example](./screenshots/brain-find-xy.gif)
