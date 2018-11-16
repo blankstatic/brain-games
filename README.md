@@ -9,6 +9,7 @@
 - brain-gcd
 - brain-progression
 - brain-prime
+- brain-find-xy
 
 ## Install
 

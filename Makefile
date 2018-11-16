@@ -20,7 +20,7 @@ start-prime:
 	npx babel-node -- src/bin/brain-prime.js
 
 start-findx:
-	npx babel-node -- src/bin/brain-findx.js
+	npx babel-node -- src/bin/brain-findxy.js
 
 lint:
 	npx eslint .
