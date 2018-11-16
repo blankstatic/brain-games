@@ -14,7 +14,10 @@ const multiplication = (a, b) => a * b;
 const operations = [addition, subtraction, multiplication];
 const symbols = ['+', '-', '*'];
 
-const generateGameData = (a, b) => {
+const generateGameData = () => {
+  const a = getRandomInteger(gameMaxValue, gameMinValue);
+  const b = getRandomInteger(gameMaxValue, gameMinValue);
+
   const randomChooseOperation = getRandomInteger(operations.length);
   const hiddenValue = getRandomInteger(2, 0);
 
@@ -30,10 +33,7 @@ const generateGameData = (a, b) => {
 };
 
 const findxyGame = () => {
-  const valueA = getRandomInteger(gameMaxValue, gameMinValue);
-  const valueB = getRandomInteger(gameMaxValue, gameMinValue);
-
-  const gameData = generateGameData(valueA, valueB);
+  const gameData = generateGameData();
   return gameData;
 };
 
