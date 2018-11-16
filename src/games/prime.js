@@ -13,10 +13,15 @@ const isPrime = (n, i = 2) => {
   return isPrime(n, i + 1);
 };
 
-const primeGame = () => {
+const generateGameData = () => {
   const question = getRandomInteger(gameMaxValue, gameMinValue);
-  const correctAnswer = isPrime(question) ? 'yes' : 'no';
-  return [question, correctAnswer];
+  const answer = isPrime(question) ? 'yes' : 'no';
+  return [question, answer];
+};
+
+const primeGame = () => {
+  const gameData = generateGameData();
+  return gameData;
 };
 
 export default () => runGame(primeGame, gameRules);
