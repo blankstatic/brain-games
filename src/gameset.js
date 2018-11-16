@@ -4,6 +4,7 @@ import calc from './games/calc';
 import gcd from './games/gcd';
 import progression from './games/progression';
 import prime from './games/prime';
+import findxy from './games/findxy';
 
 const gameset = {
   'brain-even': even,
@@ -11,6 +12,7 @@ const gameset = {
   'brain-gcd': gcd,
   'brain-progression': progression,
   'brain-prime': prime,
+  'brain-find-xy': findxy,
 };
 
 const showGames = () => {
