@@ -9,7 +9,6 @@
 - brain-gcd
 - brain-progression
 - brain-prime
-- brain-find-xy
 
 ## Install
 
@@ -27,4 +26,4 @@ brain-games
 
 ## Example
 
-![example](./screenshots/brain-find-xy.gif)
+![example](./screenshots/brain-prime.gif)

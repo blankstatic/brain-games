@@ -6,6 +6,8 @@ const gameRules = 'What is the result of the expression?';
 const gameMaxValue = 10;
 const gameMinValue = 1;
 
+const hiddenSign = ['x', 'y'];
+
 const addition = (a, b) => a + b;
 const subtraction = (a, b) => a - b;
 const multiplication = (a, b) => a * b;
@@ -13,19 +15,33 @@ const multiplication = (a, b) => a * b;
 const operations = [addition, subtraction, multiplication];
 const symbols = ['+', '-', '*'];
 
-const generateGameData = (a, b) => {
-  const randomChooseOperation = getRandomInteger(operations.length);
+const getDataCalc = (a, b, operation) => {
+  const correctAnswer = String(operations[operation](a, b));
+  const question = `${a} ${symbols[operation]} ${b}`;
+  return [question, correctAnswer];
+};
 
-  const correctAnswer = operations[randomChooseOperation](a, b);
-  const question = `${a} ${symbols[randomChooseOperation]} ${b}`;
-  return [question, String(correctAnswer)];
+const getDataFindXY = (a, b, operation) => {
+  const hiddenValue = getRandomInteger(2, 0);
+
+  const values = [a, b];
+  const valuesHidden = values.map((i, idx) => (idx === hiddenValue ? hiddenSign[hiddenValue] : i));
+
+  const partQuestion = valuesHidden.join(` ${symbols[operation]} `);
+  const operationResult = operations[operation](a, b);
+
+  const question = `${partQuestion} = ${operationResult}`;
+  const correctAnswer = String(values[hiddenValue]);
+  return [question, correctAnswer];
 };
 
 const calcGame = () => {
-  const valueA = getRandomInteger(gameMaxValue, gameMinValue);
-  const valueB = getRandomInteger(gameMaxValue, gameMinValue);
+  const a = getRandomInteger(gameMaxValue, gameMinValue);
+  const b = getRandomInteger(gameMaxValue, gameMinValue);
+  const operation = getRandomInteger(operations.length);
+  const path = getRandomInteger(2, 0);
 
-  const gameData = generateGameData(valueA, valueB);
+  const gameData = (path === 0 ? getDataCalc(a, b, operation) : getDataFindXY(a, b, operation));
   return gameData;
 };
 
