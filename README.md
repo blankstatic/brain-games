@@ -1,7 +1,7 @@
 # Brain Games
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/d426db603c57aa7836a2/maintainability)](https://codeclimate.com/github/Aliendrop/project-lvl1-s376/maintainability)
-[![Build Status](https://travis-ci.com/Aliendrop/project-lvl1-s376.svg?branch=master)](https://travis-ci.com/Aliendrop/project-lvl1-s376)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9cb8e641b861e58cb272/maintainability)](https://codeclimate.com/github/Aliendrop/brain-games/maintainability)
+[![Build Status](https://travis-ci.com/Aliendrop/brain-games.svg?branch=master)](https://travis-ci.com/Aliendrop/brain-games)
 
 ## Available games set
 - brain-even
