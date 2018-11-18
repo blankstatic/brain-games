@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aliendrop/project-lvl1-s376.git"
+    "url": "git+https://github.com/Aliendrop/brain-games.git"
   },
   "author": "Dmitry",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Aliendrop/project-lvl1-s376/issues"
+    "url": "https://github.com/Aliendrop/brain-games.git/issues"
   },
-  "homepage": "https://github.com/Aliendrop/project-lvl1-s376#readme",
+  "homepage": "https://github.com/Aliendrop/brain-games.git#readme",
   "keywords": [
     "console",
     "game"
