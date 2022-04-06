@@ -25,3 +25,7 @@ lint:
 publish:
 	rm -rf dist
 	npm publish
+
+dry-publish:
+	rm -rf dist
+	npm publish --dry-run

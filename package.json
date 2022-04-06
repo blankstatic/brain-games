@@ -1,6 +1,6 @@
 {
-  "name": "aliendrop-brain-games",
-  "version": "1.1.4",
+  "name": "brvingvmes",
+  "version": "1.1.5",
   "description": "text-based mini-games",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Aliendrop/brain-games.git"
+    "url": "git+https://github.com/blankstatic/brain-games.git"
   },
   "author": "Dmitry",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Aliendrop/brain-games.git/issues"
+    "url": "https://github.com/blankstatic/brain-games.git/issues"
   },
-  "homepage": "https://github.com/Aliendrop/brain-games.git#readme",
+  "homepage": "https://github.com/blankstatic/brain-games.git#readme",
   "keywords": [
     "console",
     "game"
